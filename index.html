@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+  <title>Health Benefit Packages 2022 · SHA West Bengal</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f8fc;
+      color: #0b1a33;
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .app {
+      max-width: 1440px;
+      width: 100%;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px -12px rgba(0, 20, 40, 0.18);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    /* header */
+    .app-header {
+      padding: 24px 28px 18px 28px;
+      border-bottom: 1px solid #e8f0f6;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      background: white;
+    }
+
+    .brand h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b1a33;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand h1 i {
+      color: #1a7f64;
+      font-size: 1.8rem;
+    }
+    .brand .sub {
+      font-size: 0.85rem;
+      color: #4d6478;
+      font-weight: 500;
+      margin-top: 2px;
+      letter-spacing: 0.2px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand .sub span {
+      font-weight: 400;
+      color: #4f7b96;
+    }
+
+    .header-stats {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .stat-badge {
+      background: #eef6f9;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a4b5e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-badge i {
+      color: #1a7f64;
+    }
+    .clear-btn {
+      background: transparent;
+      border: 1px solid #d0dfe9;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: #2c4a62;
+      cursor: pointer;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .clear-btn:hover {
+      background: #f0f6fb;
+      border-color: #b0c8d9;
+    }
+
+    /* controls */
+    .controls {
+      padding: 14px 28px 20px 28px;
+      background: #fafdff;
+      border-bottom: 1px solid #e8f0f6;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+    }
+    .search-wrapper {
+      flex: 2 1 280px;
+      position: relative;
+      min-width: 180px;
+    }
+    .search-wrapper i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #7b95ab;
+      font-size: 0.95rem;
+    }
+    .search-wrapper input {
+      width: 100%;
+      padding: 11px 18px 11px 44px;
+      border: 1.5px solid #dce7f0;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      background: white;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+    .search-wrapper input:focus {
+      border-color: #1a7f64;
+      box-shadow: 0 0 0 4px rgba(26, 127, 100, 0.10);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      flex: 1 1 auto;
+    }
+    .filter-group select {
+      padding: 9px 16px 9px 16px;
+      border: 1.5px solid #dce7f0;
+      border-radius: 60px;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1a3a4e;
+      outline: none;
+      cursor: pointer;
+      min-width: 160px;
+      font-family: 'Inter', sans-serif;
+      transition: 0.15s;
+    }
+    .filter-group select:focus {
+      border-color: #1a7f64;
+      box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.08);
+    }
+    .result-counter {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2e5773;
+      background: #eaf2f8;
+      padding: 5px 16px;
+      border-radius: 40px;
+      white-space: nowrap;
+    }
+
+    /* table */
+    .table-wrap {
+      overflow-x: auto;
+      padding: 0 4px 4px 4px;
+      -webkit-overflow-scrolling: touch;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      min-width: 780px;
+    }
+    th {
+      text-align: left;
+      padding: 14px 14px 12px 14px;
+      background: #f8fbfd;
+      font-weight: 600;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #2f5773;
+      border-bottom: 2px solid #e2ecf5;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #ecf3f9;
+      vertical-align: middle;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    tr:hover td {
+      background: #f5faff;
+    }
+    .code-badge {
+      background: #ecf4fa;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-family: 'Inter', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #1a5a7a;
+      display: inline-block;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .specialty-pill {
+      background: #ddecf5;
+      color: #12455f;
+      padding: 3px 12px;
+      border-radius: 40px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .implant-badge {
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-align: center;
+      min-width: 40px;
+    }
+    .implant-yes {
+      background: #daf1e8;
+      color: #0b5e48;
+    }
+    .implant-no {
+      background: #eaf1f7;
+      color: #3b617a;
+    }
+    .amount-cell {
+      font-weight: 700;
+      color: #0b2a40;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+    }
+    .package-name {
+      font-weight: 600;
+      color: #0a2538;
+    }
+    .proc-name {
+      color: #1a3e55;
+      max-width: 260px;
+    }
+
+    /* empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px 70px;
+      color: #6f8fa6;
+    }
+    .empty-state i {
+      font-size: 3rem;
+      color: #c6dae8;
+      margin-bottom: 14px;
+    }
+    .empty-state h3 {
+      font-weight: 500;
+      color: #244c66;
+    }
+
+    /* modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 30, 46, 0.50);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-card {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 30px 70px rgba(0, 20, 30, 0.35);
+      padding: 28px 30px 24px;
+      animation: modalIn 0.25s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    @keyframes modalIn {
+      0% { opacity: 0; transform: scale(0.96) translateY(8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      float: right;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      color: #8aaec4;
+      cursor: pointer;
+      padding: 0 6px;
+      transition: 0.15s;
+    }
+    .modal-close:hover {
+      color: #1a4058;
+    }
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0b1f33;
+      margin-bottom: 4px;
+      padding-right: 30px;
+    }
+    .modal-sub {
+      color: #3f6a84;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #e4eef8;
+      padding-bottom: 12px;
+    }
+    .modal-detail {
+      display: flex;
+      padding: 8px 0;
+      border-bottom: 1px solid #ecf3fa;
+      gap: 12px;
+    }
+    .modal-detail:last-child {
+      border-bottom: none;
+    }
+    .modal-label {
+      font-weight: 600;
+      min-width: 120px;
+      color: #2a5775;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .modal-value {
+      color: #0b1e30;
+      word-break: break-word;
+      font-size: 0.9rem;
+    }
+    .modal-value .code-inline {
+      background: #ecf4fa;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-family: monospace;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    /* responsive fine-tuning */
+    @media (max-width: 820px) {
+      body { padding: 12px; }
+      .app-header { padding: 18px 18px 14px; flex-direction: column; align-items: stretch; }
+      .brand h1 { font-size: 1.4rem; }
+      .brand .sub { font-size: 0.8rem; }
+      .controls { padding: 12px 18px 16px; flex-direction: column; align-items: stretch; }
+      .filter-group { flex-wrap: wrap; }
+      .filter-group select { min-width: 100%; }
+      .result-counter { align-self: flex-start; }
+      .modal-card { padding: 22px 18px; }
+      .modal-detail { flex-direction: column; gap: 2px; }
+      .modal-label { min-width: auto; }
+      td, th { padding: 8px 10px; font-size: 0.7rem; }
+      .table-wrap { padding: 0; }
+      .stat-badge { font-size: 0.7rem; padding: 4px 12px; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 8px; }
+      .app { border-radius: 18px; }
+      .brand h1 { font-size: 1.2rem; }
+      .brand h1 i { font-size: 1.4rem; }
+      .header-stats { width: 100%; justify-content: space-between; }
+      .stat-badge { font-size: 0.65rem; padding: 3px 10px; }
+      .clear-btn { font-size: 0.7rem; padding: 4px 12px; }
+      .search-wrapper input { padding: 10px 14px 10px 38px; font-size: 0.85rem; }
+      .filter-group select { font-size: 0.8rem; padding: 8px 14px; }
+      .result-counter { font-size: 0.75rem; padding: 4px 12px; }
+      td, th { padding: 6px 8px; font-size: 0.65rem; }
+      .code-badge { font-size: 0.6rem; padding: 1px 8px; }
+      .specialty-pill { font-size: 0.6rem; padding: 2px 8px; }
+      .implant-badge { font-size: 0.6rem; min-width: 32px; padding: 1px 8px; }
+      .modal-title { font-size: 1.2rem; }
+      .modal-card { padding: 18px 14px; }
+    }
+
+    /* touch-friendly row */
+    @media (hover: none) {
+      tr:hover td { background: inherit; }
+      tr:active td { background: #eef6fc; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- header -->
+  <header class="app-header">
+    <div class="brand">
+      <h1><i class="fas fa-heartbeat"></i> Health Benefit Packages</h1>
+      <div class="sub">2022 · SHA West Bengal <span>|</span> <span id="totalRecordsLabel" style="font-weight:500;color:#1a5a7a;">loading…</span></div>
+    </div>
+    <div class="header-stats">
+      <span class="stat-badge"><i class="fas fa-database"></i> <span id="totalCount">0</span> packages</span>
+      <button class="clear-btn" id="clearFiltersBtn"><i class="fas fa-undo-alt"></i> Clear</button>
+    </div>
+  </header>
+
+  <!-- controls -->
+  <div class="controls">
+    <div class="search-wrapper">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search specialty, package, procedure, code…" />
+    </div>
+    <div class="filter-group">
+      <select id="specialtyFilter">
+        <option value="">All specialties</option>
+      </select>
+      <span class="result-counter" id="resultCounter">0 results</span>
+    </div>
+  </div>
+
+  <!-- table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Specialty</th>
+          <th>Package Code</th>
+          <th>Procedure Code</th>
+          <th>Package Name</th>
+          <th>Procedure Name</th>
+          <th style="text-align:right;">Amount (₹)</th>
+          <th style="text-align:center;">Implant</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- rows injected -->
+      </tbody>
+    </table>
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <i class="fas fa-search-minus"></i>
+      <h3>No packages match your filters</h3>
+      <p style="color:#6f8fa6; margin-top:6px;">Try adjusting the search or specialty filter.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card" id="modalCard">
+    <button class="modal-close" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+    <div class="modal-title" id="modalTitle">Package</div>
+    <div class="modal-sub" id="modalSub">Details</div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ─── DATA (embedded from PDF) ──────────────────────────────────────────
+    const rawData = [
+      // Burns Management
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM001", procedureCode: "BM001A", packageName: "Thermal burns", procedureName: "Thermal burns Criteria 1: % Total Body Surface Area Burns (TBSA): less than 20% in adults and less than 10% in children younger than 12 years. Dressing without anesthesia", amount: 7000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM001", procedureCode: "BM001B", packageName: "Thermal burns", procedureName: "Thermal burns Criteria 2: % Total Body Surface Area Burns (TBSA): Upto 25%; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 50000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM001", procedureCode: "BM001C", packageName: "Thermal burns", procedureName: "Thermal burns Criteria 3: % Total Body Surface Area Burns (TBSA): 25-40 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 62500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM001", procedureCode: "BM001D", packageName: "Thermal burns", procedureName: "Thermal burns Criteria 4: % Total Body Surface Area Burns (TBSA):40-60 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 100000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM001", procedureCode: "BM001E", packageName: "Thermal burns", procedureName: "Thermal burns Criteria 5: % Total Body Surface Area Burns (TBSA):60-80 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 100000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM002", procedureCode: "BM002A", packageName: "Scald burns", procedureName: "Scald burns Criteria 1: % Total Body Surface Area Burns (TBSA): less than 20% in adults and less than 10% in children younger than 12 years. Dressing without anesthesia", amount: 7000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM002", procedureCode: "BM002B", packageName: "Scald burns", procedureName: "Scald burns Criteria 2: % Total Body Surface Area Burns (TBSA): Upto 25%; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 50000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM002", procedureCode: "BM002C", packageName: "Scald burns", procedureName: "Scald burns Criteria 3: % Total Body Surface Area Burns (TBSA): 25-40 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 62500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM002", procedureCode: "BM002D", packageName: "Scald burns", procedureName: "Scald burns Criteria 4: % Total Body Surface Area Burns (TBSA):40-60 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 100000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM002", procedureCode: "BM002E", packageName: "Scald burns", procedureName: "Scald burns Criteria 5: % Total Body Surface Area Burns (TBSA):60-80 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 100000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM003", procedureCode: "BM003A", packageName: "Flame burns", procedureName: "Flame burns % Total Body Surface Area Burns (TBSA) - any % (not requiring admission). Needs at least 5-6 dressing", amount: 7000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM003", procedureCode: "BM003B", packageName: "Flame burns", procedureName: "Flame burns % Total Body Surface Area Burns (TBSA): Upto 40 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 50000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM003", procedureCode: "BM003C", packageName: "Flame burns", procedureName: "Flame burns % Total Body Surface Area Burns (TBSA): 40 % - 60 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 62500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM003", procedureCode: "BM003D", packageName: "Flame burns", procedureName: "Flame burns % Total Body Surface Area Burns (TBSA): > 60 %; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 100000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM004", procedureCode: "BM004A", packageName: "Electrical contact burns", procedureName: "Electrical contact burns: Low voltage - without part of limb / limb loss; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 37500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM004", procedureCode: "BM004B", packageName: "Electrical contact burns", procedureName: "Electrical contact burns: Low voltage - with part of limb / limb loss; Includes % TBSA skin grafted, flap cover, follow-up dressings Amputation etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 50000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM004", procedureCode: "BM004C", packageName: "Electrical contact burns", procedureName: "Electrical contact burns: High voltage - with part of limb / limb loss; Includes % TBSA skin grafted, flap cover, fasciotomy +/- /amputation/Central IV Line/debridement/early skin grafting pedicle or free flap coverage, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 75000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM004", procedureCode: "BM004D", packageName: "Electrical contact burns", procedureName: "Electrical contact burns: High voltage - without part of limb / limb loss; Includes % TBSA skin grafted, flap cover, fasciotomy +/- /debridement/early skin grafting/flap cover: pedicle or free flap coverage, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 62500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM005", procedureCode: "BM005A", packageName: "Chemical burns", procedureName: "Chemical burns: Without significant facial scarring and/or loss of function; Includes % TBSA skin grafted, flap cover, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.(Similar to thermo burns require more grafting, debridement,(skin grafting/cantheopy)", amount: 50000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM005", procedureCode: "BM005B", packageName: "Chemical burns", procedureName: "Chemical burns: With significant facial scarring and/or loss of function; Includes % TBSA skin grafted, flap cover, debridement, skin grafting, follow-up dressings etc. as deemed necessary; Surgical procedures are required for deep burns that are not amenable to heal with dressings alone.", amount: 75000, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM006", procedureCode: "BM006A", packageName: "Post Burn Contracture surgeries for Functional Improvement", procedureName: "Post Burn Contracture surgeries for Functional Improvement (Package including splints, pressure garments, silicone - gel sheet and physiotherapy): Excluding Neck contracture; Contracture release with - Split thickness Skin Graft (STSG) / Full Thickness Skin Graft (FTSG) / Flap cover is done for each joint with post - operative regular dressings for STSG / FTSG / Flap cover.", amount: 62500, implant: "N" },
+      { specialty: "Burns Management", specialtyCode: "BM", packageCode: "BM006", procedureCode: "BM006B", packageName: "Post Burn Contracture surgeries for Functional Improvement", procedureName: "Post Burn Contracture surgeries for Functional Improvement (Package including splints, pressure garments, contracture release & split skin graft with or without flap reconstruction, silicone - gel sheet and physiotherapy): Neck contracture; Contracture release with - Split thickness Skin Graft (STSG) / Full Thickness Skin Graft (FTSG) / Flap cover is done for each joint with post-operative regular dressings for STSG / FTSG / Flap cover.", amount: 62500, implant: "N" },
+      // Emergency Room Packages
+      { specialty: "Emergency Room Packages", specialtyCode: "ER", packageCode: "ER001", procedureCode: "ER001A", packageName: "Laceration - Suturing / Dressing", procedureName: "Laceration - Suturing / Dressing", amount: 2000, implant: "N" },
+      { specialty: "Emergency Room Packages", specialtyCode: "ER", packageCode: "ER002", procedureCode: "ER002A", packageName: "Cardiopulmonary emergency", procedureName: "Emergency with stable cardiopulmonary status", amount: 2000, implant: "N" },
+      { specialty: "Emergency Room Packages", specialtyCode: "ER", packageCode: "ER002", procedureCode: "ER002B", packageName: "Cardiopulmonary emergency", procedureName: "Emergency with unstable cardiopulmonary status with resuscitation", amount: 11000, implant: "N" },
+      { specialty: "Emergency Room Packages", specialtyCode: "ER", packageCode: "ER003", procedureCode: "ER003A", packageName: "Animal bites (Excluding Snake Bite)", procedureName: "Animal bites (Excluding Snake Bite)", amount: 340, implant: "N" },
+      // High end Diagnostics
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD001", procedureCode: "HD001A", packageName: "Lymphangiography", procedureName: "Lymphangiography", amount: 10920, implant: "Y" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD002", procedureCode: "HD002A", packageName: "Diagnostic venography (DVA)", procedureName: "Diagnostic venography (DVA)", amount: 5520, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD003", procedureCode: "HD003A", packageName: "IVUS(Intravascular Ultrasound)- peripheral vessels", procedureName: "IVUS(Intravascular Ultrasound)- peripheral vessels", amount: 16560, implant: "Y" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD004", procedureCode: "HD004A", packageName: "Diskography", procedureName: "Diskography", amount: 5520, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD005", procedureCode: "HD005A", packageName: "USG guided percutaneous biopsy", procedureName: "USG guided percutaneous biopsy", amount: 2520, implant: "Y" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD006", procedureCode: "HD006A", packageName: "USG guided percutaneous FNAC", procedureName: "USG guided percutaneous FNAC", amount: 720, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD007", procedureCode: "HD007A", packageName: "USG guided percutaneous needle aspiration", procedureName: "USG guided percutaneous needle aspiration", amount: 720, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD008", procedureCode: "HD008A", packageName: "CT guided percutaneous biopsy", procedureName: "CT guided percutaneous biopsy", amount: 3720, implant: "Y" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD009", procedureCode: "HD009A", packageName: "CT guided percutaneous FNAC", procedureName: "CT guided percutaneous FNAC", amount: 3120, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD010", procedureCode: "HD010A", packageName: "CT guided percutaneous needle aspiration", procedureName: "CT guided percutaneous needle aspiration", amount: 3120, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD011", procedureCode: "HD011A", packageName: "Genetic workup", procedureName: "Genetic workup", amount: 20000, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD012", procedureCode: "HD012A", packageName: "Metabolic work up", procedureName: "Metabolic work up", amount: 30000, implant: "N" },
+      { specialty: "High end Diagnostics", specialtyCode: "HD", packageCode: "HD013", procedureCode: "HD013A", packageName: "Video EEG Monitoring Test (VEEG)", procedureName: "Video EEG Monitoring Test (VEEG)", amount: 3600, implant: "N" },
+      // High end Medicine (selected)
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM001", procedureCode: "HM001A", packageName: "Recombinant tissue plasminogen activator", procedureName: "Recombinant tissue plasminogen activator - 0.9 mg/kg (not to exceed 90 mg total treatment dose) infused over 60 minutes.", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM002", procedureCode: "HM002A", packageName: "Tenecteplase", procedureName: "Tenecteplase - 0.2 mg/kg given as a bolus dose over 1-2min volume of TNK to be administered at a dilution of 2mg/ml", amount: 24900, implant: "N" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM003", procedureCode: "HM003A", packageName: "Heparin", procedureName: "Heparin - Based on weight and age of patient", amount: 15000, implant: "N" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM004", procedureCode: "HM004A", packageName: "Methylprednisolone", procedureName: "Methylprednisolone - 0.117-1.66 mg/kg/day orally divided every 6-8 hours", amount: 25000, implant: "N" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM005", procedureCode: "HM005A", packageName: "Erythropoietin", procedureName: "Erythropoietin", amount: 0, implant: "N" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM006", procedureCode: "HM006A", packageName: "Liposomal amphotericin", procedureName: "Liposomal amphotericin - for 2.5 Gm dosage. @ 2500 per 50mg", amount: 125000, implant: "N" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM007", procedureCode: "HM007A", packageName: "IVIG", procedureName: "IVIG - 2000 per GM @ 2 GM/Per Kg body weight. Almost 20 GM in adult dose.( Mx. Of 200000, paid on actual utilization)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM008", procedureCode: "HM008A", packageName: "IvIg for Kawasaki Disease", procedureName: "IvIg for Kawasaki Disease - 2mg gm/Kg body wt/day ( price per gram)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM009", procedureCode: "HM009A", packageName: "IvIg for GB Syndrome", procedureName: "IvIg for GB Syndrome - 2gm /Kg body weight ( price per gram)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM010", procedureCode: "HM010A", packageName: "IvIg for ITP", procedureName: "IvIg for ITP - 2gm /Kg body weight ( price per gram)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM011", procedureCode: "HM011A", packageName: "Rituximab", procedureName: "Rituximab - 500mg /50ml ( Price per 500mg/50ml box) 2 doses initially on Day 0 and Day 15, then every 6 months", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM012", procedureCode: "HM012A", packageName: "Human Albumin 20%", procedureName: "Human Albumin 20% - 250-500ml (Price per 100ml infusion)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM013", procedureCode: "HM013A", packageName: "Albumin 5%", procedureName: "Albumin 5% - 250-500ml (Price per 100ml infusion)", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM017", procedureCode: "HM017A", packageName: "Imipenem", procedureName: "Imipenem - . 3 gm per day dose", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM018", procedureCode: "HM018A", packageName: "Meropenem", procedureName: "Meropenem - 3 gm Per day dose", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM019", procedureCode: "HM019A", packageName: "Piperacillin-Tazobactem", procedureName: "Piperacillin-Tazobactem - 4.5gm TDS per day dose", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM020", procedureCode: "HM020A", packageName: "Colistin", procedureName: "Colistin - Variable", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM021", procedureCode: "HM021A", packageName: "Vancomycin", procedureName: "Vancomycin - 15 mg/kg IV BD per day", amount: 0, implant: "Y" },
+      { specialty: "High end Medicine", specialtyCode: "HM", packageCode: "HM022", procedureCode: "HM022A", packageName: "Amphotericin deoxycholate", procedureName: "Amphotericin deoxycholate 0.3 mg/kg IV qDay", amount: 1000, implant: "N" },
+      // High end procedures (sample)
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP001", procedureCode: "HP001A", packageName: "USG guided percutaneous Radiotherapy (RFA)", procedureName: "USG guided percutaneous Radiotherapy Ablation", amount: 26640, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP002", procedureCode: "HP002A", packageName: "USG guided percutaneous Radiotherapy", procedureName: "USG guided percutaneous Microwave Ablation (MWA)", amount: 30640, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP003", procedureCode: "HP003A", packageName: "CT guided percutaneous Radiotherapy", procedureName: "CT guided percutaneous Radiotherapy Ablation (RFA)", amount: 29040, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP004", procedureCode: "HP004A", packageName: "CT guided percutaneous Radiotherapy", procedureName: "CT guided percutaneous Microwave Ablation (MWA)", amount: 33040, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP005", procedureCode: "HP005A", packageName: "USG guided percutaneous catheter drainage", procedureName: "USG guided percutaneous catheter drainage", amount: 5820, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP006", procedureCode: "HP006A", packageName: "CT guided percutaneous catheter drainage", procedureName: "CT guided percutaneous catheter drainage", amount: 5820, implant: "Y" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP007", procedureCode: "HP007A", packageName: "Cerebral angiogram under local anesthesia", procedureName: "Cerebral angiogram under local anesthesia", amount: 5800, implant: "N" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP008", procedureCode: "HP008A", packageName: "Cerebral angiogram under general anesthesia", procedureName: "Cerebral angiogram under general anesthesia", amount: 18900, implant: "N" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP009", procedureCode: "HP009A", packageName: "Spinal Angiogram under general anesthesia", procedureName: "Spinal Angiogram under general anesthesia", amount: 18900, implant: "N" },
+      { specialty: "High end procedures", specialtyCode: "HP", packageCode: "HP010", procedureCode: "HP010A", packageName: "Plasmapheresis", procedureName: "Plasmapheresis", amount: 70000, implant: "N" },
+      // Infectious Diseases
+      { specialty: "Infectious Diseases", specialtyCode: "ID", packageCode: "ID001", procedureCode: "ID001A", packageName: "Laboratory Tests for COVID-19 Infection (PCR)", procedureName: "Screening Test for COVID-19 Infection", amount: 1500, implant: "N" },
+      { specialty: "Infectious Diseases", specialtyCode: "ID", packageCode: "ID001", procedureCode: "ID001B", packageName: "Laboratory Tests for COVID-19 Infection (PCR)", procedureName: "Test for Confirmation of COVID-19 Infection", amount: 3000, implant: "N" },
+      { specialty: "Infectious Diseases", specialtyCode: "ID", packageCode: "ID003", procedureCode: "ID003A", packageName: "Treatment of COVID-19 Infection", procedureName: "Treatment of COVID-19 Infection", amount: 0, implant: "N" },
+      { specialty: "Infectious Diseases", specialtyCode: "ID", packageCode: "ID005", procedureCode: "ID005A", packageName: "Treatment of systemic fungal infections", procedureName: "Treatment of systemic fungal infections", amount: 0, implant: "N" },
+      // Interventional Radiology (selected)
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN006", procedureCode: "IN006A", packageName: "Primary percutaneous transhepatic biliary stenting (SEMS)", procedureName: "Primary percutaneous transhepatic biliary stenting (SEMS)", amount: 50700, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN006", procedureCode: "IN006B", packageName: "Percutaneous transhepatic biliary stenting (SEMS) after prior PTBD", procedureName: "Percutaneous transhepatic biliary stenting (SEMS) after prior PTBD", amount: 35500, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN007", procedureCode: "IN007A", packageName: "Percutaneous cholangioplasty", procedureName: "Percutaneous cholangioplasty", amount: 15200, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN008", procedureCode: "IN008A", packageName: "Hepatic venous wedge pressure measurement (HVPG)", procedureName: "Hepatic venous wedge pressure measurement (HVPG)", amount: 17400, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN009", procedureCode: "IN009A", packageName: "Tunnelled long-term venous catheter", procedureName: "Tunnelled long-term venous catheter", amount: 14600, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0100", procedureCode: "IN0100A", packageName: "Carotico-cavernous Fistula (CCF) embolization with coils.", procedureName: "Carotico-cavernous Fistula (CCF) embolization with balloons (includes one balloon, guide catheter, micro-catheter, micro-guidewire, general items)", amount: 187500, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0100", procedureCode: "IN0100B", packageName: "Carotico-cavernous Fistula (CCF) embolization", procedureName: "Carotico-cavernous Fistula (CCF) embolization with balloon (includes one balloon, guide catheter, micro-catheter, micro-guidewire, general items)", amount: 93800, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0101", procedureCode: "IN0101A", packageName: "Intracranial balloon angioplasty with stenting", procedureName: "Intracranial balloon angioplasty with stenting", amount: 200000, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0102", procedureCode: "IN0102A", packageName: "Intracranial thrombolysis / clot retrieval", procedureName: "Intracranial thrombolysis / clot retrieval", amount: 200000, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0103", procedureCode: "IN0103A", packageName: "Balloon test occlusion", procedureName: "Balloon test occlusion", amount: 87500, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN0104", procedureCode: "IN0104A", packageName: "Parent vessel occlusion - Basic", procedureName: "Parent vessel occlusion - Basic", amount: 37500, implant: "N" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN010", procedureCode: "IN010A", packageName: "Tunnelled longterm indwelling catheter for refractory ascites/pleural effusion", procedureName: "Tunnelled longterm indwelling catheter for refractory ascites/pleural effusion", amount: 16700, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN011", procedureCode: "IN011A", packageName: "Peripherally inserted central catheter (PICC)", procedureName: "Peripherally inserted central catheter (PICC)", amount: 8900, implant: "Y" },
+      { specialty: "Interventional Radiology", specialtyCode: "IN", packageCode: "IN012", procedureCode: "IN012A", packageName: "Chemoport/implantable lines", procedureName: "Chemoport/implantable lines", amount: 14600, implant: "Y" },
+      // Cardiology (selected)
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC001", procedureCode: "MC001A", packageName: "Right / Left Heart Catheterization", procedureName: "Right Heart Catheterization", amount: 12500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC001", procedureCode: "MC001B", packageName: "Right / Left Heart Catheterization", procedureName: "Left Heart Catheterization", amount: 12500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC002", procedureCode: "MC002A", packageName: "Catheter directed Thrombolysis", procedureName: "For Deep vein thrombosis (DVT)", amount: 38500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC002", procedureCode: "MC002B", packageName: "Catheter directed Thrombolysis", procedureName: "For Mesenteric Thrombosis", amount: 38500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC002", procedureCode: "MC002C", packageName: "Catheter directed Thrombolysis", procedureName: "For Peripheral vessels", amount: 38500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC003", procedureCode: "MC003A", packageName: "Balloon Dilatation", procedureName: "Coarctation of Aorta", amount: 48300, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC003", procedureCode: "MC003B", packageName: "Balloon Dilatation", procedureName: "Pulmonary Artery Stenosis", amount: 48300, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC004", procedureCode: "MC004A", packageName: "Balloon Pulmonary / Aortic Valvotomy", procedureName: "Balloon Pulmonary Valvotomy", amount: 29300, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC004", procedureCode: "MC004B", packageName: "Balloon Pulmonary / Aortic Valvotomy", procedureName: "Balloon Aortic Valvotomy", amount: 29300, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC005", procedureCode: "MC005A", packageName: "Balloon Mitral Valvotomy", procedureName: "Balloon Mitral Valvotomy", amount: 44700, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC006", procedureCode: "MC006A", packageName: "Balloon Atrial Septostomy", procedureName: "Balloon Atrial Septostomy", amount: 30500, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC007", procedureCode: "MC007A", packageName: "ASD Device Closure", procedureName: "ASD Device Closure", amount: 46200, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC008", procedureCode: "MC008A", packageName: "VSD Device Closure", procedureName: "VSD Device Closure", amount: 47400, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC009", procedureCode: "MC009A", packageName: "PDA Device Closure", procedureName: "PDA Device Closure", amount: 40800, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC010", procedureCode: "MC010A", packageName: "PDA stenting", procedureName: "PDA stenting", amount: 50400, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC011", procedureCode: "MC011A", packageName: "PTCA, inclusive of diagnostic angiogram", procedureName: "PTCA, inclusive of diagnostic angiogram", amount: 50800, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC012", procedureCode: "MC012A", packageName: "Electrophysiological Study", procedureName: "Electrophysiological Study", amount: 34700, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC012", procedureCode: "MC012B", packageName: "Electrophysiological Study", procedureName: "Electrophysiological Study with Radio Frequency Ablation", amount: 34700, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC013", procedureCode: "MC013A", packageName: "Percutaneous Transluminal Septal Myocardial Ablation", procedureName: "Percutaneous Transluminal Septal Myocardial Ablation", amount: 42500, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC014", procedureCode: "MC014A", packageName: "Temporary Pacemaker implantation", procedureName: "Temporary Pacemaker implantation", amount: 24000, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC015", procedureCode: "MC015A", packageName: "Single Chamber Permanent Pacemaker Implantation", procedureName: "Permanent Pacemaker Implantation - Single Chamber", amount: 30700, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC016", procedureCode: "MC016A", packageName: "Double Chamber Permanent Pacemaker Implantation", procedureName: "Permanent Pacemaker Implantation - Double Chamber", amount: 41300, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC017", procedureCode: "MC017A", packageName: "Peripheral Angioplasty", procedureName: "Peripheral Angioplasty", amount: 43200, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC018", procedureCode: "MC018A", packageName: "Bronchial artery Embolisation (for Haemoptysis)", procedureName: "Bronchial artery Embolisation (for Haemoptysis)", amount: 41000, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC019", procedureCode: "MC019A", packageName: "Pericardiocentesis", procedureName: "Pericardiocentesis", amount: 15200, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC020", procedureCode: "MC020A", packageName: "Systemic Thrombolysis (for MI)", procedureName: "Systemic Thrombolysis (for MI)", amount: 22400, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC021", procedureCode: "MC021A", packageName: "Embolization", procedureName: "Arteriovenous Malformation (AVM) in the Limbs", amount: 50800, implant: "Y" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC022", procedureCode: "MC022A", packageName: "follow up -Cardiology", procedureName: "First Follow-up- 2-4 weeks after discharge - AT NETWORK HOSPITAL (Inc. in package)", amount: 0, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC022", procedureCode: "MC022B", packageName: "follow up -Cardiology", procedureName: "Second Follow-up- After 3 months", amount: 4400, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC022", procedureCode: "MC022C", packageName: "follow up -Cardiology", procedureName: "Third Follow-up- After 3 months", amount: 2200, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC022", procedureCode: "MC022D", packageName: "follow up -Cardiology", procedureName: "fourth Follow-up- After 3 months", amount: 2200, implant: "N" },
+      { specialty: "Cardiology", specialtyCode: "MC", packageCode: "MC022", procedureCode: "MC022E", packageName: "follow up -Cardiology", procedureName: "FifthFollow-up- After 3 months", amount: 2200, implant: "N" },
+      // General Medicine (selected – keep concise but representative)
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG001", procedureCode: "MG001A", packageName: "Acute febrile illness", procedureName: "Acute febrile illness", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG002", procedureCode: "MG002A", packageName: "Severe sepsis", procedureName: "Severe sepsis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG002", procedureCode: "MG002B", packageName: "Severe sepsis", procedureName: "Septic shock", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG003", procedureCode: "MG003A", packageName: "Malaria", procedureName: "Malaria", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG003", procedureCode: "MG003B", packageName: "Malaria", procedureName: "Complicated malaria", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG004", procedureCode: "MG004A", packageName: "Dengue fever", procedureName: "Dengue fever", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG004", procedureCode: "MG004B", packageName: "Dengue fever", procedureName: "Dengue hemorrhagic fever", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG004", procedureCode: "MG004C", packageName: "Dengue fever", procedureName: "Dengue shock syndrome", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG005", procedureCode: "MG005A", packageName: "Chikungunya fever", procedureName: "Chikungunya fever", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG006", procedureCode: "MG006A", packageName: "Enteric fever", procedureName: "Enteric fever", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG007", procedureCode: "MG007A", packageName: "HIV with complications", procedureName: "HIV with complications", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG008", procedureCode: "MG008A", packageName: "Leptospirosis", procedureName: "Leptospirosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG009", procedureCode: "MG009A", packageName: "Acute gastroenteritis with dehydration", procedureName: "Acute gastroenteritis with moderate dehydration", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG009", procedureCode: "MG009B", packageName: "Acute gastroenteritis with dehydration", procedureName: "Acute gastroenteritis with severe dehydration", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG010", procedureCode: "MG010A", packageName: "Diarrhoea", procedureName: "Chronic diarrhoea", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG010", procedureCode: "MG010B", packageName: "Diarrhoea", procedureName: "Persistent diarrhoea", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0100", procedureCode: "MG0100A", packageName: "Chronic PD catheter Insertion", procedureName: "Chronic PD catheter Insertion", amount: 4100, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0101", procedureCode: "MG0101A", packageName: "Acute severe ulcerative colitis", procedureName: "Acute severe ulcerative colitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0102", procedureCode: "MG0102A", packageName: "Mesenteric Ischemia", procedureName: "Mesenteric Ischemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0103", procedureCode: "MG0103A", packageName: "Intestinal obstruction", procedureName: "Intestinal obstruction", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0104", procedureCode: "MG0104A", packageName: "Acute necrotizing severe pancreatitis", procedureName: "Acute necrotizing severe pancreatitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0105", procedureCode: "MG0105A", packageName: "Pulmonary Thromboembolism (Including thrombolytic Therapy)", procedureName: "Pulmonary Thromboembolism - Add on", amount: 25000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0106", procedureCode: "MG0106A", packageName: "Diffuse alveolar Hemorrhage Associated with SLE/Vasculitis/GP Syndrome", procedureName: "Diffuse alveolar Hemorrhage Associated with SLE/Vasculitis/GP Syndrome", amount: 136000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0107", procedureCode: "MG0107A", packageName: "Severe/Refractory Vasculitis", procedureName: "Severe/Refractory Vasculitis", amount: 75000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0108", procedureCode: "MG0108A", packageName: "Acute liver failure/Fulminant Hepatitis", procedureName: "Acute liver failure/Fulminant Hepatitis", amount: 50000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0109", procedureCode: "MG0109A", packageName: "Pulmonary thromboembolism", procedureName: "Pulmonary thromboembolism", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0110", procedureCode: "MG0110A", packageName: "Acute liver failure", procedureName: "Acute liver failure", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0111", procedureCode: "MG0111A", packageName: "Pleural Effusion", procedureName: "Pleural Effusion", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0112", procedureCode: "MG0112A", packageName: "Hyperbilirubinemia", procedureName: "Hyperbilirubinemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113A", packageName: "Polytrauma", procedureName: "Polytrauma", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113B", packageName: "Trauma-FacioMaxillary", procedureName: "Trauma-FacioMaxillary", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113C", packageName: "Trauma Head injury", procedureName: "Trauma Head injury", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113D", packageName: "Trauma Rib fracture conservative", procedureName: "Trauma Rib fracture conservative", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113E", packageName: "Trauma Blunt injury conservative", procedureName: "Trauma Blunt injury conservative", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0113", procedureCode: "MG0113F", packageName: "Trauma Contusion chest injury", procedureName: "Trauma Contusion chest injury", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0114", procedureCode: "MG0114A", packageName: "Oesophageal Varices Banding", procedureName: "Oesophageal Varices Banding", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0115", procedureCode: "MG0115A", packageName: "Inflammatory Myopathy/ Myaesthetic Crisis", procedureName: "Inflammatory Myopathy/ Myaesthetic Crisis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0116", procedureCode: "MG0116A", packageName: "Guillain Barre syndrome", procedureName: "Guillain Barre syndrome (Plasmapheresis)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0116", procedureCode: "MG0116B", packageName: "Myaesthetic crisis (Plasmapheresis)", procedureName: "Myaesthetic crisis (Plasmapheresis)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0117", procedureCode: "MG0117A", packageName: "Moyamoya revascularization", procedureName: "Moyamoya revascularization", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0118", procedureCode: "MG0118A", packageName: "Evaluation of drug resistant epilepsy-Phase-1", procedureName: "Evaluation of drug resistant epilepsy-Phase-1", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0119", procedureCode: "MG0119A", packageName: "Drug resistant epilepsy", procedureName: "Drug resistant epilepsy", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120A", packageName: "Medical/ neuro rehabilitation", procedureName: "Comprehensive medical rehabilitation for spinal injury/traumatic brain injury, CVA, Cerebral palsy with or without orthosis", amount: 25000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120B", packageName: "Medical/ neuro rehabilitation", procedureName: "Comprehensive medical rehabilitation for complication secondary to specified disability/multiple disability including procedures, chemodevaporation with or with out orthosis", amount: 35000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120C", packageName: "Medical/ neuro rehabilitation", procedureName: "Single event multiple level surgery for spasticity management in cerebral palsy", amount: 15000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120D", packageName: "Medical/ neuro rehabilitation", procedureName: "Medical rehabilitation of muscular dystrophy", amount: 7000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120E", packageName: "Medical/ neuro rehabilitation", procedureName: "Medical Rehabilitation intellectual disability", amount: 7000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120F", packageName: "Medical/ neuro rehabilitation", procedureName: "Medical Rehabilitation special learning disability", amount: 7000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0120", procedureCode: "MG0120G", packageName: "Medical/ neuro rehabilitation", procedureName: "Medical Rehabilitation multiple disability", amount: 7000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121A", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) including 15 days Iron chelation Medicine(Deferasirox) on discharge and routine investigation -CBC ( Including hemoglobin, DLC, TLC, platelet count etc) LFT, KFT, Urine protein, Sr. ferritin - during first admission and then 3 monthly.", amount: 3200, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121B", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) inlcuding 15 days Iron chelation Medicine(Deferasirox) on discharge and routine investigation-CBC ( Including hemoglobin, DLC, TLC, platelet count etc)- 15 days once", amount: 2600, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121C", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) inlcuding 15 days Iron chelation Medicine((Deferasirox) on discharge and routine investigation -CBC,(Including hemoglobin, DLC, TLC, platelet count etc) LFT,KFT,Urine Protein - 1 monthly once", amount: 3000, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121D", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) including 15 days Iron chelation Medicine(Deferiprone) on discharge and routine investigation -CBC ( Including hemoglobin, DLC, TLC, platelet count etc) LFT, KFT, Urine protein, Sr. ferritin - during first admission and then 3 monthly.", amount: 2900, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121E", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) inlcuding 15 days Iron chelation Medicine(Deferiprone) on discharge and routine investigation-CBC ( Including hemoglobin, DLC, TLC, platelet count etc)- 15 days once", amount: 2300, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG0121", procedureCode: "MG0121F", packageName: "Severe Anemia (Thalassemia)", procedureName: "Admission for Packed cell blood transfusion (Daycare /Max. of One day) including 15 days of Iron chelation Medicine(Deferiprone) on discharge and routine investigation -CBC (Including hemoglobin, DLC, TLC, platelet count etc), LFT,KFT, Urine Protein - 1 monthly once", amount: 2700, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG012", procedureCode: "MG012A", packageName: "Acute viral hepatitis", procedureName: "Acute viral hepatitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG013", procedureCode: "MG013A", packageName: "Chronic Hepatitis", procedureName: "Chronic Hepatitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG014", procedureCode: "MG014A", packageName: "Liver abscess", procedureName: "Liver abscess", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG015", procedureCode: "MG015A", packageName: "Visceral leishmaniasis", procedureName: "Visceral leishmaniasis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG016", procedureCode: "MG016A", packageName: "Pneumonia", procedureName: "Pneumonia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG017", procedureCode: "MG017A", packageName: "Severe pneumonia", procedureName: "Severe pneumonia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG018", procedureCode: "MG018A", packageName: "Empyema", procedureName: "Empyema", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG019", procedureCode: "MG019A", packageName: "Lung abscess", procedureName: "Lung abscess", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG020", procedureCode: "MG020A", packageName: "Pericardial tuberculosis", procedureName: "Pericardial tuberculosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG020", procedureCode: "MG020B", packageName: "Pleural tuberculosis", procedureName: "Pleural tuberculosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG021", procedureCode: "MG021A", packageName: "Urinary Tract Infection", procedureName: "Urinary Tract Infection", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG022", procedureCode: "MG022A", packageName: "Viral Encephalitis", procedureName: "Viral Encephalitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG023", procedureCode: "MG023A", packageName: "Septic Arthritis", procedureName: "Septic Arthritis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG024", procedureCode: "MG024A", packageName: "Skin and soft tissue infections", procedureName: "Skin and soft tissue infections", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG025", procedureCode: "MG025A", packageName: "Recurrent vomiting with dehydration", procedureName: "Recurrent vomiting with dehydration", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG026", procedureCode: "MG026A", packageName: "Pyrexia of unknown origin", procedureName: "Pyrexia of unknown origin", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG027", procedureCode: "MG027A", packageName: "Bronchiectasis", procedureName: "Bronchiectasis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG028", procedureCode: "MG028A", packageName: "Acute bronchitis", procedureName: "Acute bronchitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG029", procedureCode: "MG029A", packageName: "Acute exacerbation of COPD", procedureName: "Acute exacerbation of COPD", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG030", procedureCode: "MG030A", packageName: "Acute exacerbation of Interstitial Lung Disease", procedureName: "Acute exacerbation of Interstitial Lung Disease", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG031", procedureCode: "MG031A", packageName: "Endocarditis", procedureName: "Bacterial Endocarditis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG031", procedureCode: "MG031B", packageName: "Endocarditis", procedureName: "Fungal Endocarditis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG032", procedureCode: "MG032A", packageName: "Vasculitis", procedureName: "Vasculitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG033", procedureCode: "MG033A", packageName: "Pancreatitis", procedureName: "Acute pancreatitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG033", procedureCode: "MG033B", packageName: "Pancreatitis", procedureName: "Chronic pancreatitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG034", procedureCode: "MG034A", packageName: "Ascites", procedureName: "Ascites", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG035", procedureCode: "MG035A", packageName: "Acute transverse myelitis", procedureName: "Acute transverse myelitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG036", procedureCode: "MG036A", packageName: "Atrial Fibrillation", procedureName: "Atrial Fibrillation", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG037", procedureCode: "MG037A", packageName: "Cardiac Tamponade", procedureName: "Cardiac Tamponade", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG038", procedureCode: "MG038A", packageName: "Congestive heart failure", procedureName: "Congestive heart failure", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG039", procedureCode: "MG039A", packageName: "Asthma", procedureName: "Acute asthmatic attack", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG039", procedureCode: "MG039B", packageName: "Asthma", procedureName: "Status asthmaticus", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG040", procedureCode: "MG040A", packageName: "Respiratory failure", procedureName: "Type 1 respiratory failure", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG040", procedureCode: "MG040B", packageName: "Respiratory failure", procedureName: "Type 2 respiratory failure", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG040", procedureCode: "MG040C", packageName: "Respiratory failure", procedureName: "Due to any cause (pneumonia, asthma, COPD, ARDS, foreign body, poisoning, head injury etc.)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG041", procedureCode: "MG041A", packageName: "Upper GI bleeding", procedureName: "Upper GI bleeding (conservative)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG041", procedureCode: "MG041B", packageName: "Upper GI bleeding", procedureName: "Upper GI bleeding (endoscopic)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG042", procedureCode: "MG042A", packageName: "Lower GI hemorrhage", procedureName: "Lower GI hemorrhage", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG043", procedureCode: "MG043A", packageName: "Addison's disease", procedureName: "Addison's disease", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG044", procedureCode: "MG044A", packageName: "Renal colic", procedureName: "Renal colic", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG045", procedureCode: "MG045A", packageName: "AKI / Renal failure", procedureName: "AKI / Renal failure", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG047", procedureCode: "MG047A", packageName: "Pediatric seizure disorders", procedureName: "Status epilepticus", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG049", procedureCode: "MG049C", packageName: "Acute ischemic stroke", procedureName: "Acute ischemic stroke", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG049", procedureCode: "MG049D", packageName: "Acute hemorrhagic stroke", procedureName: "Acute hemorrhagic stroke", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG050", procedureCode: "MG050A", packageName: "Immune mediated CNS disorders", procedureName: "Immune mediated CNS disorders", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG051", procedureCode: "MG051A", packageName: "Hydrocephalus", procedureName: "Hydrocephalus", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG052", procedureCode: "MG052A", packageName: "Myxedema coma", procedureName: "Myxedema coma", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG053", procedureCode: "MG053A", packageName: "Thyrotoxic crisis", procedureName: "Thyrotoxic crisis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG054", procedureCode: "MG054A", packageName: "Gout", procedureName: "Gout", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG055", procedureCode: "MG055A", packageName: "Pneumothorax", procedureName: "Pneumothorax", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG056", procedureCode: "MG056A", packageName: "Neuromuscular Disorders", procedureName: "Neuromuscular Disorders", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG057", procedureCode: "MG057A", packageName: "Hypoglycemia", procedureName: "Hypoglycemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG058", procedureCode: "MG058A", packageName: "Diabetic Foot", procedureName: "Diabetic Foot - debridement", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG059", procedureCode: "MG059A", packageName: "Diabetic ketoacidosis", procedureName: "Diabetic ketoacidosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060A", packageName: "Electrolyte Imbalance", procedureName: "Hypercalcemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060B", packageName: "Electrolyte Imbalance", procedureName: "Hypocalcemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060C", packageName: "Electrolyte Imbalance", procedureName: "Hyponatremia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060D", packageName: "Electrolyte Imbalance", procedureName: "Hypernatremia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060E", packageName: "Electrolyte Imbalance", procedureName: "Hyperkalaemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG060", procedureCode: "MG060F", packageName: "Electrolyte Imbalance", procedureName: "Hypokalaemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG061", procedureCode: "MG061A", packageName: "Hyperosmolar Non-Ketotic coma", procedureName: "Hyperosmolar Non-Ketotic coma", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG062", procedureCode: "MG062A", packageName: "Accelerated hypertension", procedureName: "Accelerated hypertension", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG063", procedureCode: "MG063A", packageName: "Hypertensive emergencies", procedureName: "Hypertensive emergencies", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG064", procedureCode: "MG064A", packageName: "Severe anemia", procedureName: "Severe anemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG065", procedureCode: "MG065A", packageName: "Sickle cell Anemia", procedureName: "Sickle cell Anemia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG066", procedureCode: "MG066A", packageName: "Anaphylaxis", procedureName: "Anaphylaxis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG067", procedureCode: "MG067A", packageName: "Heat stroke", procedureName: "Heat stroke", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG068", procedureCode: "MG068A", packageName: "Systematic lupus erythematosus", procedureName: "Systematic lupus erythematosus (SLE)/ Diffuse alveolar hemorrhage associated with SLE", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG069", procedureCode: "MG069A", packageName: "Guillain Barre syndrome", procedureName: "Guillain Barre syndrome (IVIG)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG070", procedureCode: "MG070A", packageName: "Snake bite", procedureName: "Snake bite", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG071", procedureCode: "MG071A", packageName: "Poisoning", procedureName: "Acute organophosphorus poisoning", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG071", procedureCode: "MG071B", packageName: "Poisoning", procedureName: "Other poisonings", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG072", procedureCode: "MG072B", packageName: "Haemodialysis / Peritoneal Dialysis", procedureName: "Peritoneal Dialysis(catheter review)", amount: 500, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG072", procedureCode: "MG072C", packageName: "Haemodialysis / Peritoneal Dialysis", procedureName: "Acute Haemodialysis", amount: 1500, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG072", procedureCode: "MG072D", packageName: "Haemodialysis / Peritoneal Dialysis", procedureName: "Chronic Haemodialysis", amount: 1500, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG073", procedureCode: "MG073A", packageName: "Plasmapheresis", procedureName: "Plasmapheresis", amount: 2000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG074", procedureCode: "MG074A", packageName: "Blood transfusion", procedureName: "Whole Blood transfusion", amount: 0, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG074", procedureCode: "MG074B", packageName: "Blood transfusion", procedureName: "Blood component including platelet transfusion (RDP, PC, SDP)", amount: 0, implant: "Y" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG075", procedureCode: "MG075A", packageName: "High end radiological diagnostic (CT, MRI, Imaging including nuclear)", procedureName: "High end radiological diagnostic (CT, MRI, Imaging including nuclear imaging)", amount: 5000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG076", procedureCode: "MG076A", packageName: "High end histopathology (Biopsies) and advanced serology", procedureName: "High end histopathology (Biopsies) and advanced serology investigations", amount: 5000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG077", procedureCode: "MG077A", packageName: "Continuous renal replacement therapy/Continuous veno-venous", procedureName: "Continuous renal replacement therapy in AKI (initiation cost for disposable) per day for maximum of 5 in one admission", amount: 33000, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG078", procedureCode: "MG078A", packageName: "Alcoholic Liver Disease", procedureName: "Alcoholic Liver Disease", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG079", procedureCode: "MG079A", packageName: "Peripheral Arterial Thrombosis", procedureName: "Peripheral Arterial Thrombosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG081", procedureCode: "MG081A", packageName: "IHD / CAD / Arrhythmia", procedureName: "Arrhythmia", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG081", procedureCode: "MG081B", packageName: "IHD / CAD / Arrhythmia", procedureName: "CAD", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG082", procedureCode: "MG082A", packageName: "Bone marrow aspiration of biopsy", procedureName: "Bone marrow aspiration of biopsy", amount: 1200, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG083", procedureCode: "MG083A", packageName: "Lumbar puncture", procedureName: "Lumbar puncture", amount: 100, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG084", procedureCode: "MG084A", packageName: "Joint Aspiration", procedureName: "Joint Aspiration", amount: 200, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG085", procedureCode: "MG085A", packageName: "DVT Pneumatic Compression Stockings (Add on package in ICU)", procedureName: "DVT Pneumatic Compression Stockings (Add on package in ICU)", amount: 900, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG086", procedureCode: "MG086A", packageName: "Acute Ischemic Stoke", procedureName: "Acute Ischemic Stoke", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG086", procedureCode: "MG086B", packageName: "Acute ischemic stroke- intravenous thrombolysis", procedureName: "Acute ischemic stroke- intravenous thrombolysis - Recombinant tissue plasminogen activator", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG086", procedureCode: "MG086C", packageName: "Acute ischemic stroke- Intravenous thrombolysis", procedureName: "Acute ischemic stroke- Intravenous thrombolysis - Tenecteplase", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG087", procedureCode: "MG087A", packageName: "Venous sinus thrombosis", procedureName: "Venous sinus thrombosis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG088", procedureCode: "MG088A", packageName: "Pyogenic Meningitis", procedureName: "Pyogenic Meningitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG089", procedureCode: "MG089A", packageName: "Fungal Meningitis", procedureName: "Fungal Meningitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG090", procedureCode: "MG090A", packageName: "Autoimmune encephalitis", procedureName: "Autoimmune encephalitis - Plasmapheresis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG090", procedureCode: "MG090B", packageName: "Autoimmune encephalitis (IVIG)", procedureName: "Autoimmune encephalitis - Immunoglobulin (IVIG)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG090", procedureCode: "MG090C", packageName: "Acute transverse myelitis/ Acute demyelinating encephalitis", procedureName: "Acute transverse myelitis/ Acute demyelinating encephalitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG091", procedureCode: "MG091A", packageName: "Acute hemorrhagic stroke- Hematoma evacuation", procedureName: "Acute hemorrhagic stroke- Hematoma evacuation", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG091", procedureCode: "MG091B", packageName: "Acute hemorrhagic stroke- (Extra ventricular drainage)", procedureName: "Acute hemorrhagic stroke- Extra ventricular drainage", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG092", procedureCode: "MG092B", packageName: "Myasthenic crisis (IVIG)", procedureName: "Myasthenic crisis - Immunoglobulins (IVIG)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG093", procedureCode: "MG093A", packageName: "Myasthenic crisis (Plasmapheresis)", procedureName: "Myasthenic crisis - Plasmapheresis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG094", procedureCode: "MG094A", packageName: "Tuberculous meningitis (Hydrocephalus - VP SHUNT/ SHUNT/ EVD/Omaya)", procedureName: "Tuberculous meningitis (Hydrocephalus - VP SHUNT/ EVD/Omaya)", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG095", procedureCode: "MG095A", packageName: "Cholangitis", procedureName: "Cholangitis", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG096", procedureCode: "MG096A", packageName: "Intercostal drainage", procedureName: "Intercostal drainage", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG096", procedureCode: "MG096B", packageName: "Fibreoptic bronchoscopy (FOB)", procedureName: "Bronchoscopy", amount: 2400, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG097", procedureCode: "MG097A", packageName: "Endobronchial Ultrasound (EBUS)", procedureName: "Endobronchial Ultrasound guided fine needle biopsy", amount: 15700, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG098", procedureCode: "MG098A", packageName: "PET scan", procedureName: "PET scan", amount: 0, implant: "N" },
+      { specialty: "General Medicine", specialtyCode: "MG", packageCode: "MG099", procedureCode: "MG099A", packageName: "Platelet pheresis", procedureName: "Platelet pheresis", amount: 11000, implant: "N" },
+      // Mental Disorders (sample)
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM001", procedureCode: "MM001A", packageName: "Mental Retardation (intellectual disability)", procedureName: "Intellectual Disability (ID)", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM002", procedureCode: "MM002A", packageName: "Mental disorders - Organic, including symptomatic", procedureName: "Mental disorders - Organic, including symptomatic", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM003", procedureCode: "MM003A", packageName: "Schizophrenia, schizotypal and delusional disorders", procedureName: "Schizophrenia, schizotypal and delusional disorders", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM004", procedureCode: "MM004A", packageName: "Neurotic, stress-related and somatoform disorders", procedureName: "Neurotic, stress-related and somatoform disorders", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM005", procedureCode: "MM005A", packageName: "Mood (affective) disorders", procedureName: "Mood (affective) disorders", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM006", procedureCode: "MM006A", packageName: "Behavioural syndromes associated with physiological disturbances and", procedureName: "Behavioural syndromes associated with physiological disturbances and physical factors", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM007", procedureCode: "MM007A", packageName: "Mental and Behavioural disorders due to psychoactive substance use", procedureName: "Mental and Behavioural disorders due to psychoactive substance use", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM008", procedureCode: "MM008A", packageName: "Package (Cognitive Tests, Complete Haemogram, Liver Function Test, Renal Function Test, Serum Electrolytes, Electro CARDiography (ECG), CT / MRI Brain, Electroencephalogram, Thyroid Function Test, VDRL, HIV Test, Vitamin B12 levels, Folate levels, Lipid", procedureName: "Package (Cognitive Tests, Complete Haemogram, Liver Function Test, Renal Function Test, Serum Electrolytes, Electro Cardiogram (ECG), CT / MRI Brain, Electroencephalogram, Thyroid Function Test, VDRL, HIV Test, Vitamin B12 levels, Folate levels, Lipid Profile, Homocysteine levels), serum Lithium level", amount: 6600, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM009", procedureCode: "MM009A", packageName: "Electro Convulsive Therapy (ECT) - per session", procedureName: "Electro Convulsive Therapy (ECT) - per session", amount: 3300, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM010", procedureCode: "MM010A", packageName: "NeuroDevelopmental Disorders (NDD) Other than Intellectual Disability", procedureName: "Autism Spectrum Disorder", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM010", procedureCode: "MM010B", packageName: "NeuroDevelopmental Disorders (NDD) Other than Intellectual Disability", procedureName: "Mixed Developmental Disorder", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM010", procedureCode: "MM010C", packageName: "NeuroDevelopmental Disorders (NDD) Other than Intellectual Disability", procedureName: "Tourette Syndrome / Chronic Tic Disorder", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM010", procedureCode: "MM010D", packageName: "NeuroDevelopmental Disorders (NDD) Other than Intellectual Disability", procedureName: "Attention Deficit Hyperactivity Disorder (ADHD)", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM010", procedureCode: "MM010E", packageName: "NeuroDevelopmental Disorders (NDD) Other than Intellectual Disability", procedureName: "Specific Developmental Disorders", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM011", procedureCode: "MM011A", packageName: "Behavioral and emotional Disorders of Childhood and Adolescence", procedureName: "Oppositional Defiant Disorder", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM011", procedureCode: "MM011B", packageName: "Behavioral and emotional Disorders of Childhood and Adolescence", procedureName: "Conduct Disorder", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM011", procedureCode: "MM011C", packageName: "Behavioral and emotional Disorders of Childhood and Adolescence", procedureName: "Mixed Disorder of Conduct and Emotions", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM011", procedureCode: "MM011D", packageName: "Behavioral and emotional Disorders of Childhood and Adolescence", procedureName: "Anxiety and Depressive Disorders", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM011", procedureCode: "MM011E", packageName: "Behavioral and emotional Disorders of Childhood and Adolescence", procedureName: "Other Internalizing and Externalizing Disorders of Childhood and Adolescence", amount: 0, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM012", procedureCode: "MM012A", packageName: "Non-Pharmacological Interventions", procedureName: "Psychological, Behavioural and Developmental and Educational Interventions (Typically Includes Child Counselling / Psychotherapy, Family Counselling / Psychotherapy / Training Such As Parent Management Training, Behavioral / Cognitive-Behavioral Interventions, Developmental Interventions Such As Early Intervention, Speech / Language Therapy, Occupational Therapy, Physiotherapy, Remediation For Specific Learning Disability and Other Rehabilitative / Psychosocial Interventions)", amount: 3300, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM013", procedureCode: "MM013A", packageName: "Pharmacological Interventions", procedureName: "Common Medications Used in Management of Child & Adult Psychological Disordersincluding Anti-ADHD Medication", amount: 2200, implant: "N" },
+      { specialty: "Mental Disorders", specialtyCode: "MM", packageCode: "MM014", procedureCode: "MM014A", packageName: "Psychological / Psychological Assessment Package for All Child And Adolescent Psychiatric Disorders", procedureName: "Psychological Assessments (Includes IQ Testing, Specific Learning Disability Assessments, Assessments For Autism Spectrum Disorder, Developmental Assessments, Projective Tests and Other Tests Of Psychopathology), Other Psychosocial Assessments (Family, Schooling)", amount: 2800, implant: "N" },
+      // Neo-natal Care (abbreviated)
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN001", procedureCode: "MN001A", packageName: "Basic neonatal care package", procedureName: "Neonates 1800-2500g OR Neonates of any weight requiring closer monitoring or short-term care on mother's bedside for conditions like, but not limited to: Birth asphyxia (need for positive pressure ventilation at birth; no HIE) Moderate jaundice requiring phototherapy Large for dates (>97 percentile) or Small for gestational age (less than 3rd centile) Rule-out sepsis Investigations warranted because of antenatal scan findings. Includes activities listed under Basic Neonatal care package and Kangaroo Mother Care support", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN002", procedureCode: "MN002A", packageName: "Special Neonatal Care Package", procedureName: "Neonates between 1500-1799g OR Neonates of any weight with mild illness like, but not limited to: Mild Respiratory Distress/tachypnea Mild encephalopathy Severe jaundice requiring intensive phototherapy Unwell baby requiring monitoring Some dehydration Hypoglycaemia The above list is illustrative but not limited to these conditions. The required procedures may include radiant warmer care, gavage feeding, oxygen therapy, IV fluid administration, blood transfusion. The package includes food and stay for the mother in the hospital for breastfeeding, Kangaroo Mother Care (KMC) and Family centered care.", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN003", procedureCode: "MN003A", packageName: "Intensive Neonatal Care Package", procedureName: "Neonates of any birthweight with moderate illness like Need for mechanical ventilation for less than 24 hours or non-invasive respiratory support (CPAP, HFFNC) Sepsis / pneumonia without complications Hyperbilirubinemia requiring exchange transfusion Seizures requring anti-convulsants Major congenital malformations (pre-surgical stabilization) Cholestasis requiring investigations and in-hospital management Congestive heart failure or shock The above list is illustrative but not limited to these conditions. The package includes mandatory stay and food of the mother in the hospital for breastfeeding, Kangaroo Mother Care (KMC) and Family centered care", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN004", procedureCode: "MN004A", packageName: "Advanced Neonatal Care Package", procedureName: "Neonates between 1200-1499 g OR Neonates of any weight with at least one of the following conditions: Any condition requiring invasive ventilation longer than 24 hours Moderate to Severe Hypoxic Ischemic encephalopathy Cardiac rhythm disorders needing intervention (the cost of cardiac surgery or implant will be covered under cardiac surgery packages) Sepsis with complications such as meningitis or bone and joint infection, DIC or shock Renal failure requiring dialysis Inborn errors of metabolism The above list is illustrative but not limited to these conditions. The package includes mandatory stay and food of the mother in the hospital for breastfeeding, Kangaroo Mother Care (KMC) and Family centered care", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN005", procedureCode: "MN005A", packageName: "Critical Care Neonatal Package", procedureName: "Neonates <1200 g OR Neonates of any weight with at least one of the following conditions: Severe Respiratory Failure requiring High Frequency Ventilation or inhaled Nitric Oxide (iNO) Multisystem failure requiring multiple organ support including mechanical ventilation and multiple inotropes Reuiring parenteral nutrition Critical congenital heart disease (excluding surgical costs) The above list is illustrative but not limited to these conditions. The package includes mandatory stay and food of the mother in the hospital for breastfeeding, Kangaroo Mother Care (KMC) and Family centered care", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN006", procedureCode: "MN006A", packageName: "Chronic Care Package", procedureName: "Neonates in Special Neonatal Care, Special Neonatal Care-Plus, Intensive Neonatal Care or Critical Neonatal Care packages (MN002, MN003, MN004, MN005) who have not fully recovered and continue to require NICU/SNCU care, e.g. for respiratory support, gavage feeding, thermal support, etc.", amount: 0, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN007", procedureCode: "MN007A", packageName: "High Risk Newborn Post Discharge Care Package (Protocol Driver)", procedureName: "Includes but not limited to minimum six follow-up visits at 40 weeks PMA, and corrected ages of 3,6,9,12 and 18 months for Assessment and Management of growth and development. Neurosonogram at 40 weeks PMA if indicated. (Per visit cost)", amount: 1000, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN008", procedureCode: "MN008A", packageName: "Laser Therapy for Retinopathy of Prematurity (Irrespective of no. of per session)", procedureName: "Laser Therapy for Retinopathy of Prematurity (Irrespective of no. of eyes affected) per session", amount: 1900, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN009", procedureCode: "MN009A", packageName: "Advanced Surgery for Retinopathy of Prematurity", procedureName: "Advanced Surgery for Retinopathy of Prematurity", amount: 18800, implant: "N" },
+      { specialty: "Neo - natal Care", specialtyCode: "MN", packageCode: "MN010", procedureCode: "MN010A", packageName: "Ventriculoperitoneal Shunt Surgery (VP) or Omaya Reservoir or External Drainage for Hydrocephalus", procedureName: "Ventriculoperitoneal Shunt Surgery (VP) or Omaya Reservoir or Extramal Drainage for Hydrocephalus", amount: 6300, implant: "N" },
+      // Ophthalmology (selected)
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE001", procedureCode: "SE001A", packageName: "Ptosis Surgery", procedureName: "Ptosis Surgery", amount: 8000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE002", procedureCode: "SE002A", packageName: "Entropion correction", procedureName: "Entropion correction", amount: 6600, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE003", procedureCode: "SE003A", packageName: "Ectropion correction", procedureName: "Ectropion correction", amount: 6500, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE004", procedureCode: "SE004A", packageName: "Lid Tear Repair", procedureName: "Lid Tear Repair", amount: 7700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE005", procedureCode: "SE005A", packageName: "Lid Abscess Drainage", procedureName: "Lid Abscess Drainage", amount: 5700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE006", procedureCode: "SE006A", packageName: "Lid Tumor excision + Lid Reconstruction", procedureName: "Lid Tumor excision + Lid Reconstruction", amount: 14000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE007", procedureCode: "SE007A", packageName: "Chalazion Removal", procedureName: "Chalazion Removal", amount: 2000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE008", procedureCode: "SE008A", packageName: "Squint correction", procedureName: "Minor - upto 2 muscles", amount: 4100, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE008", procedureCode: "SE008B", packageName: "Squint correction", procedureName: "Major - 3 or more muscles (complex surgery involving four muscles or oblique muscles)", amount: 12000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE009", procedureCode: "SE009A", packageName: "Conjunctival tumour excision including Amniotic Membrane Graft", procedureName: "Conjunctival tumour excision including Amniotic Membrane Graft", amount: 7000, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE010", procedureCode: "SE010A", packageName: "Dacryocystorhinostomy", procedureName: "Canaliculo Dacryocystorhinostomy with Silicon Tube / Stent", amount: 12500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE010", procedureCode: "SE010B", packageName: "Dacryocystorhinostomy", procedureName: "Canaliculo Dacryocystorhinostomy without Silicon Tube / Stent", amount: 10000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE010", procedureCode: "SE010C", packageName: "Dacryocystorhinostomy", procedureName: "Dacryocystorhinostomy with Silicon Tube / Stent", amount: 12500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE010", procedureCode: "SE010D", packageName: "Dacryocystorhinostomy", procedureName: "Dacryocystorhinostomy without Silicon Tube / Stent", amount: 10000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE011", procedureCode: "SE011A", packageName: "Corneal Ulcer Management", procedureName: "Corneal Ulcer Management", amount: 5000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE012", procedureCode: "SE012A", packageName: "Corneal Grafting", procedureName: "Corneal Grafting", amount: 13700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE012", procedureCode: "SE012C", packageName: "Corneal Grafting", procedureName: "Lamellar Keratoplasty", amount: 17200, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE013", procedureCode: "SE013A", packageName: "Corneal Collagen Crosslinking", procedureName: "Corneal Collagen Crosslinking", amount: 17500, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE014", procedureCode: "SE014A", packageName: "Pterygium + Conjunctival Autograft", procedureName: "Pterygium + Conjunctival Autograft", amount: 11700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE015", procedureCode: "SE015A", packageName: "Corneo / Scleral / Corneo scleral tear repair", procedureName: "Corneo / Scleral / Corneo scleral tear repair", amount: 7500, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE016", procedureCode: "SE016A", packageName: "Corneal / Scleral Patch Graft", procedureName: "Corneal / Scleral Patch Graft", amount: 7300, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE017", procedureCode: "SE017A", packageName: "Scleral buckling surgery", procedureName: "Scleral buckling surgery", amount: 24700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE018", procedureCode: "SE018A", packageName: "Scleral Buckle Removal", procedureName: "Scleral Buckle Removal", amount: 6900, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE019", procedureCode: "SE019A", packageName: "Limbal Dermoid Removal", procedureName: "Limbal Dermoid Removal", amount: 2500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE020", procedureCode: "SE020A", packageName: "Cataract surgery", procedureName: "Phaco emulsification with foldable hydrophobic acrylic IOL", amount: 4500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE020", procedureCode: "SE020B", packageName: "Cataract surgery", procedureName: "SICS with non-foldable IOL", amount: 4000, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE021", procedureCode: "SE021A", packageName: "Surgery for Pediatric Cataract", procedureName: "Paediatric lensectomy", amount: 11500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE021", procedureCode: "SE021B", packageName: "Surgery for Pediatric Cataract", procedureName: "Pediatric lens aspiration with posterior capsulotomy & anterior vitrectomy", amount: 11500, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE021", procedureCode: "SE021C", packageName: "Surgery for Pediatric Cataract", procedureName: "Paediatric Membranectomy & anterior vitrectomy", amount: 10000, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE022", procedureCode: "SE022A", packageName: "Capsulotomy (YAG)", procedureName: "Capsulotomy (YAG)", amount: 1900, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE023", procedureCode: "SE023A", packageName: "SFIOL (inclusive of Vitrectomy)", procedureName: "SFIOL (inclusive of Vitrectomy)", amount: 18800, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE024", procedureCode: "SE024A", packageName: "Secondary IOL / IOL Exchange / Explant", procedureName: "Secondary IOL / IOL Exchange / Explant", amount: 6200, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE025", procedureCode: "SE025A", packageName: "IRIS Prolapse – Repair", procedureName: "IRIS Prolapse – Repair", amount: 4500, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE026", procedureCode: "SE026A", packageName: "Iridectomy", procedureName: "Iridectomy", amount: 2000, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE027", procedureCode: "SE027A", packageName: "Glaucoma Surgery", procedureName: "Cyclocryotherapy / Cyclophotocoagulation", amount: 4700, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE027", procedureCode: "SE027B", packageName: "Glaucoma Surgery", procedureName: "Glaucoma Surgery (Trabeculectomy only) with or without Mitomycin C, including postoperative medications for 12 weeks (and wherever surgical or laser procedures required for bleb augmentation and anterior chamber maintenance)", amount: 14200, implant: "N" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE027", procedureCode: "SE027C", packageName: "Glaucoma Surgery", procedureName: "Glaucoma Shunt Surgery", amount: 16300, implant: "Y" },
+      { specialty: "Ophthalmology", specialtyCode: "SE", packageCode: "SE027", procedureCode: "SE027D", packageName: "Glaucoma Surgery", procedureName: "Pediatric Glaucoma Surgery", amount: 18800, implant: "N" },
+      // Radiation Oncology (selected)
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR001", procedureCode: "MR001A", packageName: "2D External Beam Radiotherapy (Telecobalt / Strock LA) (6 Fractions) (Inclusive of Simulation", procedureName: "Radical", amount: 23100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR001", procedureCode: "MR001B", packageName: "2D External Beam Radiotherapy (Telecobalt / Strock LA) (6 Fractions) (Inclusive of Simulation", procedureName: "Adjuvant", amount: 12100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR001", procedureCode: "MR001C", packageName: "2D External Beam Radiotherapy (Telecobalt / Stock LA) (6 Fractions) (Inclusive of Simulation", procedureName: "Neoadjuvant", amount: 12100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR001", procedureCode: "MR001D", packageName: "2D External Beam Radiotherapy (Telecobalt / Stock LA) (6 Fractions) (Inclusive of Simulation", procedureName: "Additional fractions - 18 Max upto (Every additional fraction at Rs.500 per Fraction)", amount: 0, implant: "Y" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR002", procedureCode: "MR002A", packageName: "2D External Beam Radiotherapy - Palliative (Telecobalt / Stock LA) (Upto 10 Fractions) (Inclusive of Simulation", procedureName: "Palliative", amount: 11000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR003", procedureCode: "MR003A", packageName: "2D External Beam Radiotherapy (Telecobalt / Stock LA) (25 Fractions) (Inclusive of Simulation", procedureName: "Radical", amount: 22000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR003", procedureCode: "MR003B", packageName: "2D External Beam Radiotherapy (Telecobalt / Stock LA) (25 Fractions) (Inclusive of Simulation", procedureName: "Adjuvant", amount: 22000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR003", procedureCode: "MR003C", packageName: "2D External Beam Radiotherapy (Telecobalt / Stock LA) (25 Fractions) (Inclusive of Simulation", procedureName: "Neoadjuvant", amount: 22000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR003", procedureCode: "MR003D", packageName: "2D External Beam Radiotherapy (Telecobalt / Strock LA) (25 Fractions) (Inclusive of Simulation", procedureName: "Additional fractions - 10 Max upto (additional fraction at Rs.500 per Fraction upto a max)", amount: 0, implant: "Y" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR004", procedureCode: "MR004A", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (6 Fractions) (Inclusive of Simulation", procedureName: "Radical", amount: 12100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR004", procedureCode: "MR004B", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (6 Fractions) (Inclusive of Simulation", procedureName: "Adjuvant", amount: 23100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR004", procedureCode: "MR004C", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (6 Fractions) (Inclusive of Simulation", procedureName: "Neoadjuvant", amount: 23100, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR004", procedureCode: "MR004D", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (6 Fractions) (Inclusive of Simulation", procedureName: "Additional fractions - 18 Max upto (Every additional fraction at Rs.1,000 per Fraction)", amount: 0, implant: "Y" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR005", procedureCode: "MR005A", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (25 Fractions) (Inclusive of Simulation", procedureName: "Radical", amount: 44000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR005", procedureCode: "MR005B", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (25 Fractions) (Inclusive of Simulation", procedureName: "Adjuvant", amount: 44000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR005", procedureCode: "MR005C", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (25 Fractions) (Inclusive of Simulation", procedureName: "Neoadjuvant", amount: 44000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR005", procedureCode: "MR005D", packageName: "Linear Accelerator, External Beam Radiotherapy 3D CRT (25 Fractions) (Inclusive of Simulation", procedureName: "Additional fractions - 10 Max upto (Every additional fraction at Rs.1,000 per Fraction)", amount: 0, implant: "Y" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR006", procedureCode: "MR006A", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (20 Fractions) (Inclusive of Simulation)", procedureName: "Radical", amount: 77000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR006", procedureCode: "MR006B", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (20 Fractions) (Inclusive of Simulation)", procedureName: "Adjuvant", amount: 77000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR006", procedureCode: "MR006C", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (20 Fractions) (Inclusive of Simulation)", procedureName: "Neoadjuvant", amount: 77000, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR006", procedureCode: "MR006D", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (20 Fractions) (Inclusive of Simulation)", procedureName: "Additional fractions - 15 (Every additional fraction at Rs.2,000 per Fraction)", amount: 0, implant: "Y" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR007", procedureCode: "MR007A", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (6 Fractions) (Inclusive of Simulation)", procedureName: "Radical", amount: 46200, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR007", procedureCode: "MR007B", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (6 Fractions) (Inclusive of Simulation)", procedureName: "Adjuvant", amount: 46200, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR007", procedureCode: "MR007C", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (6 Fractions) (Inclusive of Simulation)", procedureName: "Neoadjuvant", amount: 46200, implant: "N" },
+      { specialty: "Radiation Oncology", specialtyCode: "MR", packageCode: "MR007", procedureCode: "MR007D", packageName: "Linear Accelerator, External Beam Radiotherapy IMRT (Intensity Modulated Radiotherapy) (6 Fractions) (Inclusive of Simulation)", procedureName: "Additional fractions - 18 Max upto (Every additional fraction at Rs.2000 per Fraction)", amount: 0, implant: "Y" },
+    ];
+
+    // ─── HELPERS ──────────────────────────────────────────────────────────
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function truncate(text, len = 55) {
+      if (!text) return '';
+      return text.length > len ? text.slice(0, len) + '…' : text;
+    }
+
+    // ─── DOM REFS ──────────────────────────────────────────────────────────
+    const tbody = document.getElementById('tableBody');
+    const searchInput = document.getElementById('searchInput');
+    const specialtyFilter = document.getElementById('specialtyFilter');
+    const resultCounter = document.getElementById('resultCounter');
+    const totalCount = document.getElementById('totalCount');
+    const totalRecordsLabel = document.getElementById('totalRecordsLabel');
+    const emptyState = document.getElementById('emptyState');
+    const clearBtn = document.getElementById('clearFiltersBtn');
+
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSub = document.getElementById('modalSub');
+    const modalBody = document.getElementById('modalBody');
+
+    // ─── POPULATE SPECIALTIES ─────────────────────────────────────────────
+    const specSet = new Set();
+    rawData.forEach(r => specSet.add(r.specialty));
+    [...specSet].sort().forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = s;
+      specialtyFilter.appendChild(opt);
+    });
+
+    totalCount.textContent = rawData.length;
+    totalRecordsLabel.textContent = `${rawData.length} packages`;
+
+    // ─── RENDER ────────────────────────────────────────────────────────────
+    function render(data) {
+      tbody.innerHTML = '';
+      if (data.length === 0) {
+        emptyState.style.display = 'block';
+        resultCounter.textContent = '0 results';
+        return;
+      }
+      emptyState.style.display = 'none';
+
+      data.forEach((row) => {
+        const tr = document.createElement('tr');
+        tr.addEventListener('click', () => openModal(row));
+
+        const implantClass = row.implant === 'Y' ? 'implant-yes' : 'implant-no';
+        const implantLabel = row.implant === 'Y' ? 'Yes' : 'No';
+
+        tr.innerHTML = `
+          <td><span class="specialty-pill">${escapeHtml(row.specialty)}</span></td>
+          <td><span class="code-badge">${escapeHtml(row.packageCode)}</span></td>
+          <td><span class="code-badge">${escapeHtml(row.procedureCode)}</span></td>
+          <td class="package-name">${escapeHtml(truncate(row.packageName, 32))}</td>
+          <td class="proc-name">${escapeHtml(truncate(row.procedureName, 50))}</td>
+          <td style="text-align:right;" class="amount-cell">₹${Number(row.amount).toLocaleString('en-IN')}</td>
+          <td style="text-align:center;"><span class="implant-badge ${implantClass}">${implantLabel}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      resultCounter.textContent = `${data.length} results`;
+    }
+
+    // ─── FILTER ─────────────────────────────────────────────────────────────
+    function applyFilters() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const specialtyVal = specialtyFilter.value;
+
+      const filtered = rawData.filter(row => {
+        if (specialtyVal && row.specialty !== specialtyVal) return false;
+        if (searchTerm) {
+          const haystack = [
+            row.specialty, row.specialtyCode, row.packageCode, row.procedureCode,
+            row.packageName, row.procedureName, String(row.amount), row.implant
+          ].join(' ').toLowerCase();
+          if (!haystack.includes(searchTerm)) return false;
+        }
+        return true;
+      });
+
+      render(filtered);
+    }
+
+    // ─── CLEAR ─────────────────────────────────────────────────────────────
+    function clearFilters() {
+      searchInput.value = '';
+      specialtyFilter.value = '';
+      applyFilters();
+    }
+
+    // ─── MODAL ─────────────────────────────────────────────────────────────
+    function openModal(row) {
+      modalTitle.textContent = row.packageName;
+      modalSub.textContent = `Procedure ${row.procedureCode} · Package ${row.packageCode}`;
+      modalBody.innerHTML = `
+        <div class="modal-detail">
+          <div class="modal-label">Specialty</div>
+          <div class="modal-value"><span class="specialty-pill">${escapeHtml(row.specialty)}</span></div>
+        </div>
+        <div class="modal-detail">
+          <div class="modal-label">Package Name</div>
+          <div class="modal-value"><strong>${escapeHtml(row.packageName)}</strong></div>
+        </div>
+        <div class="modal-detail">
+          <div class="modal-label">Procedure Name</div>
+          <div class="modal-value">${escapeHtml(row.procedureName)}</div>
+        </div>
+        <div class="modal-detail">
+          <div class="modal-label">Amount</div>
+          <div class="modal-value" style="font-weight:700;font-size:1.1rem;">₹${Number(row.amount).toLocaleString('en-IN')}</div>
+        </div>
+        <div class="modal-detail">
+          <div class="modal-label">Implant</div>
+          <div class="modal-value"><span class="implant-badge ${row.implant === 'Y' ? 'implant-yes' : 'implant-no'}">${row.implant === 'Y' ? 'Yes' : 'No'}</span></div>
+        </div>
+        <div class="modal-detail">
+          <div class="modal-label">Codes</div>
+          <div class="modal-value"><span class="code-inline">Specialty: ${escapeHtml(row.specialtyCode)}</span>  <span class="code-inline">Package: ${escapeHtml(row.packageCode)}</span>  <span class="code-inline">Procedure: ${escapeHtml(row.procedureCode)}</span></div>
+        </div>
+      `;
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ─── EVENT BINDING ────────────────────────────────────────────────────
+    searchInput.addEventListener('input', applyFilters);
+    specialtyFilter.addEventListener('change', applyFilters);
+    clearBtn.addEventListener('click', clearFilters);
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (modalOverlay.classList.contains('active')) closeModal();
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+
+    // ─── INIT ──────────────────────────────────────────────────────────────
+    render(rawData);
+  })();
+</script>
+
+</body>
+</html>
